@@ -1,0 +1,9 @@
+import pandas as pd
+
+def article_views(views: pd.DataFrame) -> pd.DataFrame:
+    x = views.loc[views['author_id'] == views['viewer_id']]
+    x = x.drop_duplicates(subset=['author_id'])
+    x = x.rename(columns={"author_id": "id"})
+    x = x.sort_values(by=['id'])
+    return x[['id']]
+    
