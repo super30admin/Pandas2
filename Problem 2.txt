@@ -1,0 +1,7 @@
+import pandas as pd
+
+def invalid_tweets(tweets: pd.DataFrame) -> pd.DataFrame:
+    tweets["content Length"]= tweets["content"].str.len() 
+    y = tweets[tweets['content Length'] > 15]
+    return(y[['tweet_id']])
+    
