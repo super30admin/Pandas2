@@ -9,9 +9,5 @@ def article_views(views: pd.DataFrame) -> pd.DataFrame:
 
 #Question 2 :
 
-def invalid_tweets(tweets: pd.DataFrame) -> pd.DataFrame:
-    invalid = tweets['content'].str.len() > 15
-    tweets = tweets[invalid]   
-
 
     return pd.DataFrame(tweets['tweet_id'])
